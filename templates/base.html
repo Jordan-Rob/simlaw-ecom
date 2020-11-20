@@ -63,7 +63,7 @@
                         <a href="tel:0200979898"><span class="icon-phone-call"></span>0200979898</a>
                     </div>
                     <div class="topbar-one__middle">
-                        <a href="index.html" class="main-nav__logo">
+                        <a href="{% url 'home'  %}" class="main-nav__logo">
                             <img src="{% static 'images/resources/simlaw.png' %}" class="main-logo" alt="Awesome Image" />
                         </a>
                     </div>
@@ -91,7 +91,7 @@
                         <div class="main-nav__main-navigation">
                             <ul class=" main-nav__navigation-box">
                                 <li class="dropdown current">
-                                    <a href="index.html">Home</a>
+                                    <a href="{% url 'home'  %}">Home</a>
                                     <!--<ul>
                                         <li><a href="index-2.html">Home 01</a></li>
                                         <li><a href="index2.html">Home 02</a></li>
@@ -144,7 +144,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About</a></li>
+                                <li><a href="{% url 'about'  %}">About</a></li>
                                 <!--
                                 <li class="dropdown">
                                     <a href="service.html">Services</a>
@@ -172,7 +172,7 @@
                                 <li class="dropdown">
                                     <a href="#">Pages</a>
                                     <ul>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="{% url 'about'  %}">About</a></li>
                                         <li><a href="why_choose_us.html">Why Choose Us</a></li>
                                         <li><a href="farmers.html">Farmers</a></li>
                                         <li><a href="gallery.html">Gallery</a></li>
@@ -187,7 +187,7 @@
                                 </li>
                                 -->
                                 <li>
-                                    <a href="contact.html">Contact</a>
+                                    <a href="{% url 'contact'  %}">Contact</a>
                                 </li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
@@ -207,6 +207,8 @@
         </div>
 
         {% block content %}
+
+
         {% endblock content %}
 
         
@@ -237,9 +239,9 @@
                                 <h3>Explore</h3>
                             </div>
                             <ul class="footer-widget__links-list list-unstyled">
-                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="{% url 'about'  %}">About Us</a></li>
                                 <li><a href="#">Services</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'contact'  %}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -351,6 +353,7 @@
     <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
     <script src="{% static 'js/nouislider.min.js' %}"></script>
     <script src="{% static 'js/isotope.js' %}"></script>
+    <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
     <script src="{% static 'js/appear.js' %}"></script>
 
 
