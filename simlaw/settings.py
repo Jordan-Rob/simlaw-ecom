@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     #custom apps
     'users.apps.UsersConfig',
     'store.apps.StoreConfig', 
+    'pages.apps.PagesConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
