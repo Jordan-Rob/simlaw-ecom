@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class CustomUser(AbstractUser):
     full_names = models.CharField(max_length=350)
-    phone = models.IntegerField() 
+    phone = models.IntegerField(null=True, blank=True) 
     address = models.CharField(max_length=200)
 
     def get_absolute_url(self):

@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="{% static 'css/nouislider.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/nouislider.pips.css' %}">
     <link rel="stylesheet" href="{% static 'css/agrikol_iconl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.bootstrap-touchspin.css' %}">
     <!-- Template styles -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
@@ -90,7 +92,7 @@
                         </div>
                         <div class="main-nav__main-navigation">
                             <ul class=" main-nav__navigation-box">
-                                <li class="dropdown current">
+                                <li class="dropdown">
                                     <a href="{% url 'home'  %}">Home</a>
                                     <!--<ul>
                                         <li><a href="index-2.html">Home 01</a></li>
@@ -186,6 +188,13 @@
                                     </ul>
                                 </li>
                                 -->
+                                <li class="dropdown">
+                                    <a href="#">Shop</a>
+                                    <ul>
+                                        <li><a href="{% url 'listin'  %}">Products</a></li>
+                                        <li><a href="#">Cart</a></li>
+                                    </ul>
+                                </li>
                                 <li>
                                     <a href="{% url 'contact'  %}">Contact</a>
                                 </li>
@@ -193,13 +202,11 @@
                         </div><!-- /.navbar-collapse -->
 
                         <div class="main-nav__right">
-                            <!--
                             <div class="icon_cart_box">
                                 <a href="cart.html">
                                     <span class="icon-shopping-cart"></span>
                                 </a>
                             </div>
-                            -->
                         </div>
                     </div>
                 </nav>
@@ -355,7 +362,8 @@
     <script src="{% static 'js/isotope.js' %}"></script>
     <script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
     <script src="{% static 'js/appear.js' %}"></script>
-
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/jquery.bootstrap-touchspin.js' %}"></script>
 
     <!-- template scripts -->
     <script src="{% static 'js/theme.js' %}"></script>
