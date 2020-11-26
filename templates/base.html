@@ -198,10 +198,30 @@
                                 <li>
                                     <a href="{% url 'contact'  %}">Contact</a>
                                 </li>
+                                {% if user.is_authenticated %}
+                                <li>
+                                    <a href="#">
+                                        <span>My Account</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <span>logout</span>
+                                    </a>
+                                </li>
+                                {% else %}
+                                <li>
+                                    <a href="{% url 'login' %}">
+                                        <span>login</span>
+                                    </a>
+                                </li>
+                                {% endif %}
                             </ul>
+                            
                         </div><!-- /.navbar-collapse -->
 
                         <div class="main-nav__right">
+                            
                             <div class="icon_cart_box">
                                 <a href="cart.html">
                                     <span class="icon-shopping-cart"></span>
@@ -211,6 +231,20 @@
                     </div>
                 </nav>
             </header>
+        </div>
+
+
+        <div class="mt-5 py-4">
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                {% endfor %}
+            {% endif %}
         </div>
 
         {% block content %}
