@@ -1,0 +1,280 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Product detail</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <div class="product_detail_image">
+                    <img src="{{ product.image_570x679.url }}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <div class="product_detail_content">
+                    <h2>{{ product.name }}</h2>
+                    <div class="product_detail_review_box">
+                        <div class="product_detail_price_box">
+                            <p>UGX{{ product.price }}</p>
+                        </div>
+                        <div class="product_detail_review">
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#"><i class="fa fa-star"></i></a>
+                            <a href="#" class="deactive"><i class="fa fa-star"></i></a>
+                            <span>2 Customer Reviews</span>
+                        </div>
+                    </div>
+                    <div class="product_detail_text">
+                        <p>{{ product.description }}</p>
+                    </div>
+                    <ul class="list-unstyled product_detail_address">
+                        <li>SKU. {{ product.sku }}</li>
+                        <li>Available in store</li>
+                    </ul>
+                    <div class="product-quantity-box">
+                        <div class="addto-cart-box">
+                            <button class="thm-btn" type="submit">Add to Cart</button>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled category_tag_list">
+                        <li>Category: {{ product.category }}</li>
+                    </ul>
+                    <div class="product_detail_share_box">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="product-tab-box tabs-box">
+                    <ul class="tab-btns tab-buttons clearfix list-unstyled">
+                        <li data-tab="#desc" class="tab-btn"><span>description</span></li>
+                        <li data-tab="#addi__info" class="tab-btn"><span>Additional info</span></li>
+                        <li data-tab="#review" class="tab-btn active-btn"><span>reviews</span></li>
+                    </ul>
+                    <div class="tabs-content">
+                        <div class="tab" id="desc">
+                            <div class="product-details-content">
+                                <div class="desc-content-box">
+                                    <p>Lorem ipsum dolor sit amet sectetur adipiscin elit cras feuiat antesed
+                                        ces condimentum viverra duis autue nim convallis id diam vitae duis
+                                        egety dictum erosin dictum sem. Vivamus sed molestie sapien aliquam et
+                                        facilisis arcu dut molestie augue suspendisse sodales tortor nunced quis
+                                        cto ligula posuere cursus keuis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                                        sint occaecated cupidatat non proident sunt in culpa qui officia
+                                        deserunt mollit anim id est laborum ivamus sed molestie sapien.</p>
+                                    <p class="desc-content-box_bottom">Aliquam et facilisis arcuut olestie
+                                        augue. Suspendisse sodales tortor nunc quis auctor ligula posuere cursus
+                                        duis aute irure dolor in reprehenderit in voluptate velit esse cill
+                                        doloreeu fugiat nulla pariatur excepteur sint occaecat cupidatat non
+                                        proident sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        Vivaus sed delly molestie sapien. Aliquam et facilisis arcuut molestie
+                                        augue. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab" id="addi__info">
+                            <ul class="additionali_nfo list-unstyled">
+                                <li><span>Weight:</span>3kg</li>
+                                <li><span>Category:</span>Food</li>
+                                <li><span>Tags:</span>Vegetables, Fruits</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab active-tab" id="review">
+                            <div class="reviews-box">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="product_reviews_box">
+                                            <h3 class="product_reviews_title">2 Product reviews</h3>
+                                            <div class="product_reviews_single">
+                                                <div class="product_reviews_image">
+                                                    <img src="assets/images/shop/review-1.png" alt="">
+                                                </div>
+                                                <div class="product_reviews_content">
+                                                    <h3>Kevin Martins<span>15 Nov, 2019</span></h3>
+                                                    <p>It has survived not only five centuries, but also the
+                                                        leap into electronic typesetting unchanged. It was
+                                                        popularised in the sheets If you are going to use a
+                                                        passage of Lorem Ipsum, you need to be is simply free
+                                                        text. Nam nec tellus a odio tincidunt auctor a ornare
+                                                        odio. Sed non mauris vitae erat consequat auctor eu in
+                                                        elit.</p>
+                                                    <div class="product_reviews_rating product_detail_review">
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#" class="deactive"><i
+                                                                class="fa fa-star"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product_reviews_single">
+                                                <div class="product_reviews_image">
+                                                    <img src="assets/images/shop/review-2.png" alt="">
+                                                </div>
+                                                <div class="product_reviews_content">
+                                                    <h3>Kevin Martins<span>15 Nov, 2019</span></h3>
+                                                    <p>It has survived not only five centuries, but also the
+                                                        leap into electronic typesetting unchanged. It was
+                                                        popularised in the sheets If you are going to use a
+                                                        passage of Lorem Ipsum, you need to be is simply free
+                                                        text. Nam nec tellus a odio tincidunt auctor a ornare
+                                                        odio. Sed non mauris vitae erat consequat auctor eu in
+                                                        elit.</p>
+                                                    <div class="product_reviews_rating product_detail_review">
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#"><i class="fa fa-star"></i></a>
+                                                        <a href="#" class="deactive"><i
+                                                                class="fa fa-star"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="add_review_box">
+                                            <h3 class="add_review_title">Add a review</h3>
+                                            <div class="add_review_rating">
+                                                <span>Rate this Product?</span>
+                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                <a href="#"><i class="fa fa-star"></i></a>
+                                                <a href="#" class="deactive"><i class="fa fa-star"></i></a>
+                                            </div>
+                                            <form class="add_review_form" action="#">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="input-box">
+                                                            <textarea name="review" placeholder="Write review"
+                                                                required=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="input-box">
+                                                            <input type="text" name="name"
+                                                                placeholder="Full name" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="input-box">
+                                                            <input type="email" name="email"
+                                                                placeholder="Email address" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <div class="review_submit_btn">
+                                                            <a href="#" class="thm-btn">Submit Review</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        <div class="block-title text-center">
+            <p>Shop items</p>
+            <h3>similar products</h3>
+            <div class="leaf">
+                <img src="assets/images/resources/leaf.png" alt="">
+            </div>
+        </div>
+        <div class="all_products">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="all_products_single text-center">
+                        <div class="all_product_item_image">
+                            <img src="assets/images/shop/similar_pro_1.jpg" alt="">
+                            <div class="all_product_hover">
+                                <div class="all_product_icon">
+                                    <a href="#"><span class="icon-shopping-cart"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Split kiwi</h4>
+                        <p>$5.98</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="all_products_single text-center">
+                        <div class="all_product_item_image">
+                            <img src="assets/images/shop/similar_pro_2.jpg" alt="">
+                            <div class="all_product_hover">
+                                <div class="all_product_icon">
+                                    <a href="#"><span class="icon-shopping-cart"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Chinese cabbage</h4>
+                        <p>$4.99</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="all_products_single text-center">
+                        <div class="all_product_item_image">
+                            <img src="assets/images/shop/similar_pro_3.jpg" alt="">
+                            <div class="all_product_hover">
+                                <div class="all_product_icon">
+                                    <a href="#"><span class="icon-shopping-cart"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>Chili pepper</h4>
+                        <p>$4.98</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6">
+                    <div class="all_products_single text-center">
+                        <div class="all_product_item_image">
+                            <img src="assets/images/shop/similar_pro_4.jpg" alt="">
+                            <div class="all_product_hover">
+                                <div class="all_product_icon">
+                                    <a href="#"><span class="icon-shopping-cart"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>lemons</h4>
+                        <p>$6.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
