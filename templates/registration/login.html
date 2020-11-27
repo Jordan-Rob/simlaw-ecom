@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block content %}
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Account</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>login</span></li>
+        </ul>
+    </div>
+</section>
+
+<section class="contact-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="contact-one__form__wrap">
+                    <div class="block-title text-left">
+                        <h3>Login</h3>
+                        <div class="leaf">
+                            <img src="{% static 'images/resources/leaf.png' %}" alt="">
+                        </div>
+                    </div>
+                    <form action="" method="POST" class="contact-one__form">
+                        {% csrf_token %}
+                        <div class="row low-gutters">
+                            <div class="col-md-12">
+                                {{ form.username.label_tag }}
+                                <div class="input-group">
+                                    {{ form.username }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                {{ form.password.label_tag }}
+                                <div class="input-group">
+                                    {{ form.password }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group contact__btn">
+                                    <button type="submit" class="thm-btn">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="have_questions">
+                    <div class="image_box">
+                        <img src="assets/images/resources/ss.jpg" alt="">
+                    </div>
+                    <div class="block-title text-center">
+                        <h3>Don't have an account?</h3>
+                        <div class="leaf">
+                            <img src="assets/images/resources/leaf.png" alt="">
+                        </div>
+                    </div>
+                    <div class="have_questions_text">
+                        <p>Get started by clicking below</p>
+                    </div>
+                    <div class="have_questions_btn">
+                        <a href="#" class="thm-btn">SignUp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+<div class="contact-one">
+    <div class=" container" style="padding-bottom: 200px;">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="contact-one_form_wrap">
+                    <form class="ps-form--account ps-tab-root" method="POST">
+                        {% csrf_token %}
+                        <ul style="text-align: center;">
+                            <li style="display: inline-block"><h2><a href="#">Login</a></h2></li>
+                            <li style="display: inline-block; font: bold;" class="active"><a href="#">SignUp</a></li>
+                        </ul>
+                        <div class="ps-tabs">
+                            <div class="ps-tab active" id="register">
+                                <div class="ps-form__content">
+                                    <h5>Login</h5>
+                              <button class="ps-btn ps-btn--fullwidth" type="submit">Login</button>
+                                </div>
+                                <div class="ps-form__footer">
+                                    <p><a href="#">Forgot password?</a></p>
+                                    <p>Connect with:</p>
+                                    <ul class="ps-list--social">
+                                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+-->
+
+{% endblock content %}
