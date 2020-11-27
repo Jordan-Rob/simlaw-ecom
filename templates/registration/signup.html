@@ -8,7 +8,7 @@
         <ul class="thm-breadcrumb list-unstyled">
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="#" class="shop_style">Shop</a></li>
-            <li><span>login</span></li>
+            <li><span>Signup</span></li>
         </ul>
     </div>
 </section>
@@ -19,7 +19,7 @@
             <div class="col-xl-6">
                 <div class="contact-one__form__wrap">
                     <div class="block-title text-left">
-                        <h3>Login</h3>
+                        <h3>SignUp</h3>
                         <div class="leaf">
                             <img src="{% static 'images/resources/leaf.png' %}" alt="">
                         </div>
@@ -34,14 +34,26 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                {{ form.password.label_tag }}
+                                {{ form.email.label_tag }}
                                 <div class="input-group">
-                                    {{ form.password }}
+                                    {{ form.email }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                {{ form.address.label_tag }}
+                                <div class="input-group">
+                                    {{ form.address }}
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                {{ form.new_password.label_tag }}
+                                <div class="input-group">
+                                    {{ form.new_password }}
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="input-group contact__btn">
-                                    <button type="submit" class="thm-btn">Login</button>
+                                    <button  class="thm-btn">SignUp</button>
                                 </div>
                             </div>
                         </div>
@@ -54,16 +66,16 @@
                         <img src="assets/images/resources/ss.jpg" alt="">
                     </div>
                     <div class="block-title text-center">
-                        <h3>Don't have an account?</h3>
+                        <h3>Already have an account?</h3>
                         <div class="leaf">
                             <img src="assets/images/resources/leaf.png" alt="">
                         </div>
                     </div>
                     <div class="have_questions_text">
-                        <p>Get started by clicking below</p>
+                        <p>Sign in by clicking below</p>
                     </div>
                     <div class="have_questions_btn">
-                        <a href="{% url 'signup' %}" class="thm-btn">SignUp</a>
+                        <a href="{% url 'login' %}" class="thm-btn">Login</a>
                     </div>
                 </div>
             </div>
