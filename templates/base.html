@@ -192,7 +192,7 @@
                                     <a href="#">Shop</a>
                                     <ul>
                                         <li><a href="{% url 'listin'  %}">Products</a></li>
-                                        <li><a href="#">Cart</a></li>
+                                        <li><a href="{% url 'cart' %}">Cart</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -223,7 +223,7 @@
                         <div class="main-nav__right">
                             
                             <div class="icon_cart_box">
-                                <a href="cart.html">
+                                <a href="{% url 'cart' %}">
                                     <span class="icon-shopping-cart"></span>
                                 </a>
                             </div>

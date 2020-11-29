@@ -18,13 +18,15 @@ class Pdt_detail(DetailView):
 class CartView( View):
     def get(self, *args, **kwargs):
         try:
+            '''
             order = Order.objects.get(customer=self.request.user, complete=False)
             #form = DeliveryForm
             context = {
                 'object': order,
                 #'form': form,
             }
-            return render(self.request, 'cart.html', context)
+            '''
+            return render(self.request, 'store/cart.html')
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order")
             return redirect("/")

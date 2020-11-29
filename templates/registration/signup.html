@@ -27,30 +27,18 @@
                     <form action="" method="POST" class="contact-one__form">
                         {% csrf_token %}
                         <div class="row low-gutters">
+                            {% for field in form  %}
                             <div class="col-md-12">
-                                {{ form.username.label_tag }}
+                                <p style="color:#fff">{{ field.label_tag }}</p>
                                 <div class="input-group">
-                                    {{ form.username }}
+                                    {{ field }}
                                 </div>
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error }}</p>
+                                {% endfor %}
                             </div>
-                            <div class="col-md-12">
-                                {{ form.email.label_tag }}
-                                <div class="input-group">
-                                    {{ form.email }}
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                {{ form.address.label_tag }}
-                                <div class="input-group">
-                                    {{ form.address }}
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                {{ form.new_password.label_tag }}
-                                <div class="input-group">
-                                    {{ form.new_password }}
-                                </div>
-                            </div>
+                            {% endfor %}
+                            
                             <div class="col-md-12">
                                 <div class="input-group contact__btn">
                                     <button  class="thm-btn">SignUp</button>
