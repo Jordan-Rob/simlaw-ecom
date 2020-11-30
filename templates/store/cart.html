@@ -31,62 +31,65 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td colspan="2">
-                                    <div class="colum_box">
-                                        <div class="prod_thum">
-                                            <a href="#"><img src="{% static 'images/shop/cart_product_img-1.jpg' %}"
-                                                    alt=""></a>
+                            {% for orderitem in object.orderitem_set.all %}
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="colum_box">
+                                            <div class="prod_thum">
+                                                <a href="#"><img src="{{ orderitem.product.image_115x122.url }}" alt=""></a>
+                                            </div>
+                                            <div class="title">
+                                                <h3 class="prod-title">{{ orderitem.product.name }}</h3>
+                                            </div>
                                         </div>
-                                        <div class="title">
-                                            <h3 class="prod-title">Basket full of vegetables</h3>
+                                    </td>
+                                    <td class="pro_price">UGX{{ orderitem.product.price }}</td>
+                                    <td class="">
+                                        <div style="display: inline-block; position: relative;" class="form-group--number">
+                                            <button style="background: none;
+                                            border: none;
+                                            background-color: transparent;
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            width: 20px;
+                                            height: 20px;
+                                            max-width: 20px;
+                                            display: flex;
+                                            flex-flow: row nowrap;
+                                            justify-content: center;
+                                            align-items: center;
+                                            color: #000;
+                                            font-size: 20px;
+                                            line-height: 1em; right: 10px;" class="up"><a href="{% url 'add-to-cart' orderitem.product.id %}">+</a></button>
+                                            <button style="background: none;
+                                            border: none;
+                                            background-color: transparent;
+                                            position: absolute;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            width: 20px;
+                                            height: 20px;
+                                            max-width: 20px;
+                                            display: flex;
+                                            flex-flow: row nowrap;
+                                            justify-content: center;
+                                            align-items: center;
+                                            color: #000;
+                                            font-size: 20px;
+                                            line-height: 1em; left: 10px;" class="down" ><a href="{% url 'remove-item-from-cart' orderitem.product.id %}">-</a></button>
+                                            <input style="border: 1px solid #ccc;height: 40px;padding: 0 25px;text-align: center;font-size: 14px;color: #000;border-radius: 10px;background-color: transparent;" class="form-control" type="text" placeholder="{{ orderitem.quantity }}" value="{{ orderitem.quantity }}">
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="pro_price">$9.99</td>
-                                <td class="pro_qty">
-                                    <div class="product-quantity-box">
-                                        <div class="input-box">
-                                            <input class="quantity-spinner" type="text" value="1"
-                                                name="quantity">
+                                        
+                                    </td>
+                                    <td class="pro_sub_total">UGX {{ orderitem.get_total_item_price }}</td>
+                                    <td>
+                                        <div class="pro_remove">
+                                            <a href="{% url 'remove-from-cart' orderitem.product.id %}"><i class="fas fa-times"></i></a>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="pro_sub_total">$9.99</td>
-                                <td>
-                                    <div class="pro_remove">
-                                        <i class="fas fa-times"></i>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <div class="colum_box">
-                                        <div class="prod_thum">
-                                            <a href="#"><img src="{% static 'images/shop/cart_product_img-2.jpg'  %}"
-                                                    alt=""></a>
-                                        </div>
-                                        <div class="title">
-                                            <h3 class="prod-title">Oranges</h3>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="pro_price">$9.99</td>
-                                <td class="pro_qty">
-                                    <div class="product-quantity-box">
-                                        <div class="input-box">
-                                            <input class="quantity-spinner" type="text" value="1"
-                                                name="quantity">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="pro_sub_total">$9.99</td>
-                                <td>
-                                    <div class="pro_remove">
-                                        <i class="fas fa-times"></i>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -107,16 +110,16 @@
             </div>
             <div class="col-xl-6">
                 <ul class="total_box list-unstyled">
-                    <li><span>Subtotal</span>$19.98 USD</li>
-                    <li><span>Shipping Cost</span>$0.00 USD</li>
-                    <li><span>Total</span>$19.98 USD</li>
+                    <li><span>Subtotal</span>UGX {{ object.total_price }}</li>
+                    <li><span>Shipping Cost</span> ____</li>
+                    <li><span>Total</span>UGX {{ object.total_price }}</li>
                 </ul>
             </div>
         </div>
         <div class="row">
             <div class="col-xl-12">
                 <div class="button_box">
-                    <button class="thm-btn update_btn" type="button">Update</button>
+                    <a class="thm-btn update_btn" href="{% url 'listin' %}">Back to Shop</a>
                     <button class="thm-btn checkout_btn" type="button">Checkout</button>
                 </div>
             </div>

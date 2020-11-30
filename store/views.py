@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, View, TemplateView
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
 
 from django.contrib import messages
@@ -15,18 +17,18 @@ class Pdt_detail(DetailView):
     template_name = 'store/product.html'
 
 
-class CartView( View):
+class CartView( LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
         try:
-            '''
+            
             order = Order.objects.get(customer=self.request.user, complete=False)
             #form = DeliveryForm
             context = {
                 'object': order,
                 #'form': form,
             }
-            '''
-            return render(self.request, 'store/cart.html')
+            
+            return render(self.request, 'store/cart.html', context)
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order")
             return redirect("/")
@@ -49,7 +51,7 @@ class CartView( View):
 #Function to handle adding items to cart or 
 # updating quantity of item incase it's already a cart item     
 
-#@login_required
+@login_required
 def add_to_cart(request, pk):
     product = get_object_or_404(Product, id=pk) 
     orderitem, created = OrderItem.objects.get_or_create(
@@ -74,7 +76,7 @@ def add_to_cart(request, pk):
 
 
 #function to handle removal of item from cart
-#@login_required
+@login_required
 def remove_from_cart(request, pk):
     product = get_object_or_404(Product, id=pk)
     order_qs = Order.objects.filter(customer=request.user, complete=False)
@@ -94,7 +96,7 @@ def remove_from_cart(request, pk):
         return redirect('pdt_detail', pk =pk )
    
 
-#@login_required
+@login_required
 def remove_item_from_cart(request, pk):
     product = get_object_or_404(Product, id=pk)
     order_qs = Order.objects.filter(customer=request.user, complete=False)

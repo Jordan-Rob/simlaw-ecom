@@ -68,7 +68,7 @@
                                         <img src="{{ pdt.image_270x293.url }}" alt="">
                                         <div class="all_product_hover">
                                             <div class="all_product_icon">
-                                                <a href="cart.html"><span class="icon-shopping-cart"></span></a>
+                                                <a href="{% url 'add-to-cart' pdt.id %}"><span class="icon-shopping-cart"></span></a>
                                             </div>
                                         </div>
                                     </div>
