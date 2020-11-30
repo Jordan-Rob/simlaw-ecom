@@ -134,6 +134,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = '/users/login'
 
 # media configurations
 MEDIA_URL = '/media/'
