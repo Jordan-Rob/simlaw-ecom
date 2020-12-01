@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Pasture Legumes</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5">
+                <div class="product_detail_image">
+                    <img src="{% static 'images/shop/pastures.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Pasture Types</th>
+                            <th>Optimal Production level</th>
+                            <th>Duration to Maturity</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>Lucerne (Alfafa)</td>
+                            <td>1000-3000 meters above sea level</td>
+                            <td>90-120 days</td>
+                            <td>
+                                <ul>
+                                    <li>-Very palatable, nutritious and can sustain high milk production levels when fed to dairy cattle.</li>
+                                    <li>-Can last up to four years under good management.</li>
+                                    <li>-Can be fed to goats, rabbits and chicken.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>Green leaf Desmodium</td>
+                            <td>0-3000 meters above sea level</td>
+                            <td>90-120 days</td>
+                            <td>
+                                <ul>
+                                    <li>-High crude protein levels</li>
+                                    <li>-Rich in minerals</li>
+                                    <li>-Improves soil fertility through nitrogen fixation.</li>
+                                    <li>-Controls striga weed growth</li>
+                                    <li>-Grows in all altitudes</li>
+                                </ul>
+                                
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+{% endblock content %}

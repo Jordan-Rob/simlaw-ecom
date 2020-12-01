@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Tomatoes</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div style="display: grid; justify-content:center; margin-bottom:100px;">
+            <div >
+                <div class="product_detail_image" >
+                    <img  src="{% static 'images/shop/tomatoes.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Spacing</th>
+                            <th>Seed Rate</th>
+                            <th>Approximate Seed Count(Per Grams)</th>
+                            <th>Yield</th>
+                            <th>Duration to <br> Maturity</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>NEW FORTUNE MAKER F1</td>
+                            <td>60x60cm</td>
+                            <td>950 grams per acre</td>
+                            <td>250 seeds</td>
+                            <td>30-35 tons per acre</td>
+                            <td>70-75 days from transplanting</td>
+                            <td>-Tolerant to bacteria wilt, verticillium wilt and fasurium wilt.</td>
+                         </tr>
+                         <tr>
+                            <td>IMPROVED NOUVELLE F1</td>
+                            <td>60x60cm</td>
+                            <td>50 grams per acre</td>
+                            <td>250 seeds</td>
+                            <td>35 tons per acre</td>
+                            <td>80-85 days from transplanting</td>
+                            <td>
+                                <ul>
+                                    <li>-Very good shelf life and transport quality.</li>
+                                    <li>-High bacterial wilt tolerance verticillium wilt and fusarium wilt.</li>
+                                    <li>-Semi determinate.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>KILELE F1</td>
+                            <td>60x60cm</td>
+                            <td>35 grams per acre</td>
+                            <td>300 seeds</td>
+                            <td>70-78 tons per acre</td>
+                            <td>80 days from transplanting</td>
+                            <td>
+                                <ul>
+                                    <li>-Over 21 days shelf life.</li>
+                                    <li>-Disease tolerance: bacterial wilt.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>RIO GRANDE</td>
+                            <td>60x45cm</td>
+                            <td>100 grams per acre</td>
+                            <td>200 seeds</td>
+                            <td>15-17 tons per acre</td>
+                            <td>75 days from transplanting</td>
+                            <td>
+                                <ul>
+                                    <li>-Determine open pollinated variety.</li>
+                                    <li>-Excellent keeping quality.</li>
+                                    <li>-Firm elongated fruits with excellent transport qualities.</li>
+                                    <li>-Tolerance to verticillium wilt, fusarium wilt and tomato leaf curl.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+{% endblock content %}

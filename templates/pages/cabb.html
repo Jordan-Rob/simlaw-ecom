@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Cabbages</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home'  %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div style="display: grid; justify-content:center; margin-bottom:100px;">
+            <div >
+                <div class="product_detail_image">
+                    <img src="{% static 'images/shop/cabbage.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Average Head Weight</th>
+                            <th>Plant Spacing</th>
+                            <th>Seed Rate</th>
+                            <th>Duration to <br> Maturity</th>
+                            <th>Approximate Seed Count(Per Grams)</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>GLORIA F1</td>
+                            <td>5kgs</td>
+                            <td>60x60cm</td>
+                            <td>100 grams per acre</td>
+                            <td>80 days</td>
+                            <td>230 seeds</td>
+                            <td>
+                                <ul>
+                                    <li>-Very uniform growth, excellent round compact head.</li>
+                                    <li>-Transports well.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>QUEEN F1</td>
+                            <td>4kgs</td>
+                            <td>60x45cm</td>
+                            <td>100 grams per acre</td>
+                            <td>75-80 days</td>
+                            <td>300 seeds</td>
+                            <td>
+                                <ul>
+                                    <li>-Blue, green round cabbage with waxy leaves.</li>
+                                    <li>-Tolerant to black rot diseases and diamond back moth.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>POLO F1</td>
+                            <td>3-4kgs</td>
+                            <td>60x45cm</td>
+                            <td>120 grams per acre</td>
+                            <td>70-75 days</td>
+                            <td>300 seeds</td>
+                            <td>Tolerant to black rot.</td>
+                         </tr>
+                         <tr>
+                            <td>ESCAZU F1</td>
+                            <td>3-4kgs</td>
+                            <td>60x45cm</td>
+                            <td>120 grams per acre</td>
+                            <td>90 days</td>
+                            <td>250 seeds</td>
+                            <td>
+                                <ul>
+                                    <li>-Observable field tolerance to black rot and diamondback moth.</li>
+                                    <li>-Uniform head formation and high yielding.</li>
+                                    <li>-Good field holding capacity.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+{% endblock content %}

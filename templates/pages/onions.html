@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Onions</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div style="display: grid; justify-content:center; margin-bottom:100px;">
+            <div >
+                <div class="product_detail_image">
+                    <img src="{% static 'images/shop/red-onion.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Yield Potential</th>
+                            <th>Duration to <br> Maturity</th>
+                            <th>Plant Spacing</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>RED PASSION F1</td>
+                            <td>25 tons per acre</td>
+                            <td>120 days</td>
+                            <td>30x10cm</td>
+                            <td>
+                                <ul>
+                                    <li>-Deep red hybrid onion.</li>
+                                    <li>-Very good drying and keeping quality.</li>
+                                    <li>-Tolerant to pink rot disease.</li>
+                                    <li>-Produces good grade onions.</li>
+                                    <li>-Uniform maturity.</li>
+                                    <li>-Can store for up to 6 months.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>RED NICE F1</td>
+                            <td>25-30 ton per acre</td>
+                            <td>120 days</td>
+                            <td>30x10cm</td>
+                            <td>
+                                <ul>
+                                    <li>-Well adapted.</li>
+                                    <li>-Long shelf life of up to 6 months at room temperature.</li>
+                                    <li>-Tolerant to purple blotch disease.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>BOMBAY RED</td>
+                            <td>7 tons per acre</td>
+                            <td>105-120 days</td>
+                            <td>30x10cm</td>
+                            <td>
+                                <ul>
+                                    <li>-Widely grown.</li>
+                                    <li>-Deep red onion.</li>
+                                    <li>-Dries well.</li>
+                                    <li>-Onion bulbs are of good grade.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>RED CREOLE</td>
+                            <td>18 tons per acre</td>
+                            <td>110-120 days</td>
+                            <td>30x10cm</td>
+                            <td>
+                                <ul>
+                                    <li>-Attractive shape red onion.</li>
+                                    <li>-Good storage qualities.</li>
+                                    <li>-Has good taste.</li>
+                                    <li>-Tolerant to pink rot disease.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+
+{% endblock content %}

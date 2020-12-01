@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Bush Beans</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-5">
+                <div class="product_detail_image">
+                    <img src="{% static 'images/shop/beans.jpg' %}" alt="">
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-7">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Optimal Production level</th>
+                            <th>Duration to Maturity</th>
+                            <th>Yield</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>NABE 4</td>
+                            <td>1000-1600 meters above sea level</td>
+                            <td>80-85 days</td>
+                            <td>1.5 - 2.5 tons per hectare</td>
+                            <td>-Resistant to BCMV, Br and anthracnose red seeded.</td>
+                         </tr>
+                         <tr>
+                            <td>NABE 15</td>
+                            <td>1000-1600 meters above sea level</td>
+                            <td>70 days</td>
+                            <td>1.8 - 2.0 tons per hectare</td>
+                            <td>-Resistant to anthracnose, red seed color.</td>
+                         </tr>
+                         <tr>
+                            <td>NABE 16</td>
+                            <td>1000-1600 meters above sea level</td>
+                            <td>60-70 days</td>
+                            <td>1.8 - 2.0 tons per hectare</td>
+                            <td>-Marketable, suitable for all regions.</td>
+                         </tr>
+                         <tr>
+                            <td>NABE 17</td>
+                            <td>1000-1600 meters above sea level</td>
+                            <td>58-78 days</td>
+                            <td>2.0 - 2.5 tons per hectare</td>
+                            <td>-Highly marketable and tasty.</td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+
+{% endblock content %}
