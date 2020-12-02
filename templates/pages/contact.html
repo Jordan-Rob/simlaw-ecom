@@ -33,30 +33,36 @@
                         </div>
                     </div>
                     <form action="" method="POST" class="contact-one__form">
+                        {% csrf_token %}
                         <div class="row low-gutters">
                             <div class="col-md-6">
+                                <p style="color:#fff">{{ form.name.label_tag }}</p>
                                 <div class="input-group">
-                                    <input type="text" name="name" placeholder="Your Name">
+                                    {{ form.name }}
                                 </div>
                             </div>
                             <div class="col-md-6">
+                                <p style="color:#fff">{{ form.email.label_tag }}</p>
                                 <div class="input-group">
-                                    <input type="text" name="email" placeholder="Email Address">
+                                    {{ form.email }}
                                 </div>
                             </div>
                             <div class="col-md-6">
+                                <p style="color:#fff">{{ form.phone.label_tag }}</p>
                                 <div class="input-group">
-                                    <input type="text" name="phone" placeholder="Phone Number">
+                                    {{ form.phone }}
                                 </div>
                             </div>
                             <div class="col-md-6">
+                                <p style="color:#fff">{{ form.subject.label_tag }}</p>
                                 <div class="input-group">
-                                    <input type="text" name="subject" placeholder="Subject">
+                                    {{ form.subject }}
                                 </div>
                             </div>
                             <div class="col-md-12">
+                                <p style="color:#fff">{{ form.message.label_tag }}</p>
                                 <div class="input-group">
-                                    <textarea name="message" placeholder="Write Message"></textarea>
+                                    {{ form.message }}
                                 </div>
                             </div>
                             <div class="col-md-12">

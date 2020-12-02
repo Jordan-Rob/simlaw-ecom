@@ -38,6 +38,8 @@ class ContactPageView(View):
             contact.save() 
             messages.success(self.request, "Your  Message was succesfully sent")
             return redirect('home')
+
+            
 class MaizePageView(TemplateView):
     template_name = 'pages/maize.html'
 
