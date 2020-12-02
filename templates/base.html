@@ -199,10 +199,13 @@
                                     <a href="{% url 'contact'  %}">Contact</a>
                                 </li>
                                 {% if user.is_authenticated %}
-                                <li>
+                                <li class="dropdown">
                                     <a href="#">
-                                        <span>My Account</span>
+                                        <span>Hi {{ user.username }}</span>
                                     </a>
+                                    <ul>
+                                        <li><a href="{% url 'user_dash' user.pk %}">Account</a></li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="{% url 'logout' %}">

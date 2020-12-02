@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Hi {{ user.username }}</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Account</a></li>
+        </ul>
+    </div>
+</section>
+
+<section style=" padding: 60px 0; display: block;" class="ps-section--account">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class=" text-left">
+                    <h1>Welcome <br>{{ user.username }} </h1>
+                    <div class="leaf">
+                        <img src="{% static 'images/resources/leaf.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="faq_one_right">
+                    <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                        <div class="accrodion active ">
+                            <div class="accrodion-title">
+                                <a style="color: inherit;" href="{% url 'user_dash' user.id %}"><h4>Account Information</h4></a>
+                            </div>
+                        </div>
+                        <div class="accrodion">
+                            <div class="accrodion-title">
+                                <a style="color: inherit;" href="{% url 'user_orders' user.id %}"><h4>Orders</h4></a>
+                            </div>
+                        </div>
+                        <div class="accrodion">
+                            <div class="accrodion-title">
+                                <a style="color: inherit;" href="{% url 'logout' %}"><h4>logout</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="">
+                    <div class=" text-left">
+                        <h1>User Info</h1>
+                        <div class="leaf">
+                            <img src="{% static 'images/resources/leaf.png' %}" alt="">
+                        </div>
+                    </div>
+                    <form action="" method="POST" class="contact-one__form">
+                        {% csrf_token %}
+                        <div class="row low-gutters">
+                            {% for field in form  %}
+                            <div class="col-md-6">
+                                <p style="color:rgb(189, 189, 189)">{{ field.label_tag }}</p>
+                                <div class="input-group">
+                                    {{ field }}
+                                </div>
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                            
+                            <div class="col-md-12">
+                                <div class="input-group contact__btn">
+                                    <button  class="thm-btn">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

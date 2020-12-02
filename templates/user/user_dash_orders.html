@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Hi {{ user.username }}</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Account</a></li>
+        </ul>
+    </div>
+</section>
+
+<section style=" padding: 60px 0; display: block;" class="ps-section--account">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class=" text-left">
+                    <h1>Welcome <br>{{ user.username }} </h1>
+                    <div class="leaf">
+                        <img src="{% static 'images/resources/leaf.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="faq_one_right">
+                    <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                        <div class="accrodion ">
+                            <div class="accrodion-title">
+                                <a style="color: inherit;" href="{% url 'user_dash' user.id %}"><h4>Account Information</h4></a>
+                            </div>
+                        </div>
+                        <div class="accrodion active">
+                            <div class="accrodion-title">
+                                <a style="color: inherit;" href="{% url 'user_orders' user.id %}"><h4>Orders</h4></a>
+                            </div>
+                        </div>
+                        <div class="accrodion">
+                            <div class="accrodion-title">
+                                <a style="color: inherit;" href="{% url 'logout' %}"><h4>logout</h4></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="cart_table_box">
+                    <div class=" text-left">
+                        <h1>User Orders</h1>
+                        <div class="leaf">
+                            <img src="{% static 'images/resources/leaf.png' %}" alt="">
+                        </div>
+                    </div>
+                    {% for order in orders %}
+                        {% if order.complete == True %}
+                            <h5>Order made on {{ order.date_ordered }}</h5>
+                            <table class="cart_table">
+                                <thead class="cart_table_head">
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for orderitem in order.orderitem_set.all %}
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="colum_box">
+                                                    <div class="prod_thum">
+                                                        <a href="#"><img src="{{ orderitem.product.image_115x122.url }}" alt=""></a>
+                                                    </div>
+                                                    <div class="title">
+                                                        <h3 class="prod-title">{{ orderitem.product.name }}</h3>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="pro_price">UGX{{ orderitem.product.price }}</td>
+                                            <td class="pro_price">{{ orderitem.quantity }}</td>
+                                            <td class="pro_sub_total">UGX {{ orderitem.get_total_item_price }}</td>
+                                            
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% else %}
+                            <p>No Orders made Yet!</p>
+                        {% endif %}
+                    {% endfor %}        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
