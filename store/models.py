@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from users.models import CustomUser 
+from model_utils import Choices
 
 # Create your models here.
 class Category(models.Model):
@@ -39,7 +40,7 @@ class Order(models.Model):
     transaction_id = models.CharField(max_length=200, null=True)
     #billing_details = models.ForeignKey( 'BillingDetails', on_delete = models.SET_NULL, blank=True, null=True)
     #payment = models.ForeignKey( 'Payment', on_delete = models.SET_NULL, blank=True, null=True)
-    #delivery = models.ForeignKey( 'Delivery', on_delete = models.SET_NULL, blank=True, null=True)
+    delivery = models.ForeignKey( 'Delivery', on_delete = models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.customer.username
@@ -85,5 +86,18 @@ class OrderItem(models.Model):
             return self.get_total_item_discount_price()
         '''    
         return  self.get_total_item_price()
+
+
+class Delivery(models.Model):
+    STATUS = Choices(
+        ('doorstep', ('delivery to doorstep')),
+        ('pickup', ('delivery to pick up point')),
+    )
+   # [..]
+    delivery_option = models.CharField(
+       max_length=32,
+       choices=STATUS,
+       default=STATUS.doorstep,
+    )           
 
     

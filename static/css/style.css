@@ -8721,7 +8721,7 @@ h6 {
     flex-direction: row;
 }
 
-.apply_coupon_input_box input[type="text"] {
+.apply_coupon_input_box{
     font-size: 16px;
     color: #878986;
     height: 80px;

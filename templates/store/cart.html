@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block content %}
 
 <section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
@@ -95,35 +95,34 @@
                 </div>
             </div>
         </div>
-        <div class="row cart_apply_coupon_box">
-            <div class="col-xl-6">
-                {% comment %}
-                <div class="apply_coupon">
-                    <div class="apply_coupon_input_box">
-                        <input type="text" name="coupon-code" value="" placeholder="Enter Coupon Code">
-                    </div>
-                    <div class="apply-coupon-button">
-                        <button class="thm-btn" type="submit">Apply Coupon</button>
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row cart_apply_coupon_box">
+                <div class="col-xl-6">
+                    <div class="apply_coupon">
+                        <div class="apply_coupon_input_box">
+                           {{ form|crispy }}
+                        </div>
                     </div>
                 </div>
-                {% endcomment %}
-            </div>
-            <div class="col-xl-6">
-                <ul class="total_box list-unstyled">
-                    <li><span>Subtotal</span>UGX {{ object.total_price }}</li>
-                    <li><span>Shipping Cost</span> ____</li>
-                    <li><span>Total</span>UGX {{ object.total_price }}</li>
-                </ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="button_box">
-                    <a class="thm-btn update_btn" href="{% url 'listin' %}">Back to Shop</a>
-                    <button class="thm-btn checkout_btn" type="button">Checkout</button>
+                <div class="col-xl-6">
+                    <ul class="total_box list-unstyled">
+                        <li><span>Subtotal</span>UGX {{ object.total_price }}</li>
+                        <li><span>Shipping Cost</span> ____</li>
+                        <li><span>Total</span>UGX {{ object.total_price }}</li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="button_box">
+                        <a class="thm-btn update_btn" href="{% url 'listin' %}">Back to Shop</a>
+                        <button class="thm-btn checkout_btn" type="submit">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 </section>
 

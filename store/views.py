@@ -4,6 +4,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
+from .forms import DeliveryForm
 
 from django.contrib import messages
 # Create your views here.
@@ -22,10 +23,10 @@ class CartView( LoginRequiredMixin, View):
         try:
             
             order = Order.objects.get(customer=self.request.user, complete=False)
-            #form = DeliveryForm
+            form = DeliveryForm
             context = {
                 'object': order,
-                #'form': form,
+                'form': form,
             }
             
             return render(self.request, 'store/cart.html', context)
@@ -33,7 +34,7 @@ class CartView( LoginRequiredMixin, View):
             messages.error(self.request, "You do not have an active order")
             return redirect("/")
     
-    '''
+    
     def post(self, *args, **kwargs):
         form = DeliveryForm(self.request.POST or None)
         order = Order.objects.get(customer=self.request.user, complete=False)   
@@ -46,7 +47,7 @@ class CartView( LoginRequiredMixin, View):
             order.delivery = delivery_option
             order.save()
             return redirect('checkout')  
-    '''
+    
 
 #Function to handle adding items to cart or 
 # updating quantity of item incase it's already a cart item     

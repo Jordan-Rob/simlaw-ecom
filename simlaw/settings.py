@@ -139,3 +139,6 @@ LOGIN_URL = '/users/login'
 # media configurations
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# django-crispy-forms config
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
