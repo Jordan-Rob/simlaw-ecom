@@ -4,7 +4,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
-from .forms import DeliveryForm
+from .forms import DeliveryForm, CheckoutForm
 
 from django.contrib import messages
 # Create your views here.
@@ -39,9 +39,9 @@ class CartView( LoginRequiredMixin, View):
         form = DeliveryForm(self.request.POST or None)
         order = Order.objects.get(customer=self.request.user, complete=False)   
         if form.is_valid():
-            option = form.cleaned_data.get('option')
+            option = form.cleaned_data.get('delivery_option')
             delivery_option = Delivery(
-                option = option,
+                delivery_option = option,
             )
             delivery_option.save() 
             order.delivery = delivery_option
@@ -120,4 +120,42 @@ def remove_item_from_cart(request, pk):
         messages.info(request , "You do not have an active order")
         return redirect('pdt_detail', pk =pk )
 
+
+
+class CheckoutView(View):
+    def get(self, *args, **kwargs):
+        form = CheckoutForm
+        order = Order.objects.get(customer=self.request.user, complete=False)
+        if order.delivery.delivery_option == order.delivery.STATUS.doorstep:
+            delivery = order.delivery
+            amount = order.total_price()
+            amnt = 5000
+            text = 'Doorstep Delivery around Kampala'
+            total = order.total_price_deliv()
+            context = {
+                'order':order,
+                'amount':amount,
+                'delivery': delivery,
+                'amnt': amnt,
+                'text': text,
+                'total': total,
+                'form':form
+            }
+            return render(self.request, 'store/checkout.html', context )
+        else:
+            delivery = order.delivery
+            amount = order.total_price()
+            amnt = 2000
+            text = 'Delivery at pick up point'
+            total = order.total_price_deliv_pickup()
+            context = {
+                'order':order,
+                'amount':amount,
+                'delivery': delivery,
+                'amnt': amnt,
+                'text': text,
+                'total': total,
+                'form':form
+            }
+            return render(self.request, 'checkout.html', context )
 

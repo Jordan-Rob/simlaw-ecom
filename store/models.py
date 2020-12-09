@@ -38,7 +38,7 @@ class Order(models.Model):
     date_ordered = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False, null=True, blank=False)
     transaction_id = models.CharField(max_length=200, null=True)
-    #billing_details = models.ForeignKey( 'BillingDetails', on_delete = models.SET_NULL, blank=True, null=True)
+    billing_details = models.ForeignKey( 'BillingDetails', on_delete = models.SET_NULL, blank=True, null=True)
     #payment = models.ForeignKey( 'Payment', on_delete = models.SET_NULL, blank=True, null=True)
     delivery = models.ForeignKey( 'Delivery', on_delete = models.SET_NULL, blank=True, null=True)
 
@@ -100,4 +100,14 @@ class Delivery(models.Model):
        default=STATUS.doorstep,
     )           
 
-    
+class BillingDetails(models.Model):
+    customer = models.ForeignKey(
+        CustomUser, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=12)
+    location = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    building_apartment_name = models.CharField(max_length=200, null=True, blank=True)
+    order_notes = models.CharField( max_length=300, null=True, blank=True )  
+
+    def __str__(self):
+        return self.customer.username
