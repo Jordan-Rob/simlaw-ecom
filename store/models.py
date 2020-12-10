@@ -39,7 +39,7 @@ class Order(models.Model):
     complete = models.BooleanField(default=False, null=True, blank=False)
     transaction_id = models.CharField(max_length=200, null=True)
     billing_details = models.ForeignKey( 'BillingDetails', on_delete = models.SET_NULL, blank=True, null=True)
-    #payment = models.ForeignKey( 'Payment', on_delete = models.SET_NULL, blank=True, null=True)
+    payment = models.ForeignKey( 'Payment', on_delete = models.SET_NULL, blank=True, null=True)
     delivery = models.ForeignKey( 'Delivery', on_delete = models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
@@ -111,3 +111,23 @@ class BillingDetails(models.Model):
 
     def __str__(self):
         return self.customer.username
+
+
+class Payment(models.Model):
+    customer = models.ForeignKey(
+        CustomUser, on_delete=models.CASCADE)
+    amount = models.FloatField()
+    pay_on_delivery = models.BooleanField(default=False , null=True, blank=True)  
+    complete = models.BooleanField(default=False , null=True, blank=True)  
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.customer.username
+
+class Pickup(models.Model):
+    pickup_location = models.CharField(max_length=122)
+    active = models.BooleanField(default=False)  
+
+    def __str__(self):
+        return self.pickup_location 
+        

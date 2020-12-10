@@ -16,87 +16,90 @@
 
 <section class="checkout">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6">
-                <div class="billing_details">
-                    
-                    <form class="billing_details_form">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.phone|as_crispy_field }}
+        <form method="POST" >
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="billing_details">
+                        
+                        <form class="billing_details_form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="billing_input_box">
+                                        {{ form.phone|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="billing_input_box">
+                                        {{ form.location|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="billing_input_box">
+                                        {{ form.address|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="billing_input_box">
+                                        {{ form.building_apartment_name|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="billing_input_box">
+                                        {{ form.order_notes|as_crispy_field }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.location|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.address|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.building_apartment_name|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.order_notes|as_crispy_field }}
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <h2>Your Order</h2>
-                <div >
-                    <div class="order_table_box">
-                        <table class="order_table_detail">
-                            <thead class="order_table_head">
-                                <tr>
-                                    <th>Product</th>
-                                    <th class="text-right">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for item in order.orderitem_set.all %}
-                                <tr>
-                                    <td class="pro__title">{{  item.product.name  }} × {{ item.quantity }}</td>
-                                    <td class="pro__price">UGX {{ item.get_final_price }}</td>
-                                </tr>
-                                {% endfor %}
-                                <tr>
-                                    <td class="pro__title">Subtotal</td>
-                                    <td class="pro__price">UGX {{ order.total_price }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="pro__title">{{ text }}</td>
-                                    <td class="pro__price">UGX {{ amnt }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="pro__title">Total</td>
-                                    <td class="pro__price">UGX {{ total }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        </form>
                     </div>
                 </div>
-                <div class="row">
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="place_order_btn">
-                            <a href="#" class="thm-btn">Place Your Order</a>
+                <div class="col-xl-6 col-lg-6">
+                    <h2>Your Order</h2>
+                    <div >
+                        <div class="order_table_box">
+                            <table class="order_table_detail">
+                                <thead class="order_table_head">
+                                    <tr>
+                                        <th>Product</th>
+                                        <th class="text-right">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in order.orderitem_set.all %}
+                                    <tr>
+                                        <td class="pro__title">{{  item.product.name  }} × {{ item.quantity }}</td>
+                                        <td class="pro__price">UGX {{ item.get_final_price }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    <tr>
+                                        <td class="pro__title">Subtotal</td>
+                                        <td class="pro__price">UGX {{ order.total_price }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pro__title">{{ text }}</td>
+                                        <td class="pro__price">UGX {{ amnt }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pro__title">Total</td>
+                                        <td class="pro__price">UGX {{ total }}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="place_order_btn">
+                                <button href="#" class="thm-btn" type="submit">Place Your Order</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="your_order">
         </div>
     </div>

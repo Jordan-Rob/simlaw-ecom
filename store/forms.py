@@ -13,3 +13,9 @@ class CheckoutForm(forms.Form):
     address = forms.CharField()
     building_apartment_name = forms.CharField(required=False)
     order_notes = forms.CharField( required=False )        
+
+
+class PaymentForm(ModelForm):
+    class Meta:
+        model = Payment
+        fields = [ 'pay_on_delivery' ]
