@@ -18,38 +18,31 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
-                <div class="billing_details">
-                    
-                    <form class="billing_details_form">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.phone|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.location|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.address|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.building_apartment_name|as_crispy_field }}
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="billing_input_box">
-                                    {{ form.order_notes|as_crispy_field }}
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                <h2>Your Billing Details</h2>
+                <div >
+                    <div class="order_table_box">
+                        <table class="order_table_detail">
+                            
+                            <tbody>
+                                <tr>
+                                    <td class="pro__title">{{  item.product.name  }} × {{ item.quantity }}</td>
+                                    <td class="pro__price">UGX {{ item.get_final_price }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="pro__title">Subtotal</td>
+                                    <td class="pro__price">UGX {{ order.total_price }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="pro__title">{{ text }}</td>
+                                    <td class="pro__price">UGX {{ amnt }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="pro__title">Total</td>
+                                    <td class="pro__price">UGX {{ total }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
