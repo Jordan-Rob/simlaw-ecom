@@ -170,6 +170,10 @@ options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
 
 CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hlhsre6wy',
+    'API_KEY': '385799476122757',
+    'API_SECRET': 'fuWQ00N3XoEFBKSfQWHyggjbv7c',
+
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
