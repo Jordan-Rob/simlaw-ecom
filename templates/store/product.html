@@ -62,32 +62,10 @@
             <div class="col-xl-12">
                 <div class="product-tab-box tabs-box">
                     <ul class="tab-btns tab-buttons clearfix list-unstyled">
-                        <li data-tab="#desc" class="tab-btn"><span>description</span></li>
                         <li data-tab="#addi__info" class="tab-btn"><span>Additional info</span></li>
                         <li data-tab="#review" class="tab-btn active-btn"><span>reviews</span></li>
                     </ul>
                     <div class="tabs-content">
-                        <div class="tab" id="desc">
-                            <div class="product-details-content">
-                                <div class="desc-content-box">
-                                    <p>Lorem ipsum dolor sit amet sectetur adipiscin elit cras feuiat antesed
-                                        ces condimentum viverra duis autue nim convallis id diam vitae duis
-                                        egety dictum erosin dictum sem. Vivamus sed molestie sapien aliquam et
-                                        facilisis arcu dut molestie augue suspendisse sodales tortor nunced quis
-                                        cto ligula posuere cursus keuis aute irure dolor in reprehenderit in
-                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                                        sint occaecated cupidatat non proident sunt in culpa qui officia
-                                        deserunt mollit anim id est laborum ivamus sed molestie sapien.</p>
-                                    <p class="desc-content-box_bottom">Aliquam et facilisis arcuut olestie
-                                        augue. Suspendisse sodales tortor nunc quis auctor ligula posuere cursus
-                                        duis aute irure dolor in reprehenderit in voluptate velit esse cill
-                                        doloreeu fugiat nulla pariatur excepteur sint occaecat cupidatat non
-                                        proident sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        Vivaus sed delly molestie sapien. Aliquam et facilisis arcuut molestie
-                                        augue. </p>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="tab" id="addi__info">
                             <ul class="additionali_nfo list-unstyled">
@@ -216,62 +194,24 @@
         </div>
         <div class="all_products">
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="all_products_single text-center">
-                        <div class="all_product_item_image">
-                            <img src="assets/images/shop/similar_pro_1.jpg" alt="">
-                            <div class="all_product_hover">
-                                <div class="all_product_icon">
-                                    <a href="#"><span class="icon-shopping-cart"></span></a>
+                {% for pdt in products %}
+                    {% if pdt.category == product.category %}
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="all_products_single text-center">
+                                <div class="all_product_item_image">
+                                    <img src="{{ pdt.image_270x293.url }}" alt="">
+                                    <div class="all_product_hover">
+                                        <div class="all_product_icon">
+                                            <a href="#"><span class="icon-shopping-cart"></span></a>
+                                        </div>
+                                    </div>
                                 </div>
+                                <h4>{{ pdt.name }}</h4>
+                                <p>UGX {{pdt.price}}</p>
                             </div>
                         </div>
-                        <h4>Split kiwi</h4>
-                        <p>$5.98</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="all_products_single text-center">
-                        <div class="all_product_item_image">
-                            <img src="assets/images/shop/similar_pro_2.jpg" alt="">
-                            <div class="all_product_hover">
-                                <div class="all_product_icon">
-                                    <a href="#"><span class="icon-shopping-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>Chinese cabbage</h4>
-                        <p>$4.99</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="all_products_single text-center">
-                        <div class="all_product_item_image">
-                            <img src="assets/images/shop/similar_pro_3.jpg" alt="">
-                            <div class="all_product_hover">
-                                <div class="all_product_icon">
-                                    <a href="#"><span class="icon-shopping-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>Chili pepper</h4>
-                        <p>$4.98</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6">
-                    <div class="all_products_single text-center">
-                        <div class="all_product_item_image">
-                            <img src="assets/images/shop/similar_pro_4.jpg" alt="">
-                            <div class="all_product_hover">
-                                <div class="all_product_icon">
-                                    <a href="#"><span class="icon-shopping-cart"></span></a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4>lemons</h4>
-                        <p>$6.00</p>
-                    </div>
-                </div>
+                    {% endif %}
+                {% endfor %}    
             </div>
         </div>
     </div>

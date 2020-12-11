@@ -17,6 +17,13 @@ class Pdt_detail(DetailView):
     model = Product
     template_name = 'store/product.html'
 
+    def get_context_data(self, *args, **kwargs):
+        context = super(Pdt_detail, self).get_context_data( **kwargs)
+        context['products'] = Product.objects.all().order_by('?')[:4]
+        context['productss'] = Product.objects.all().order_by('?')[:9]
+        context['pdts'] = Product.objects.all().order_by('?')[:3]
+        return context
+
 
 class CartView( LoginRequiredMixin, View):
     def get(self, *args, **kwargs):
