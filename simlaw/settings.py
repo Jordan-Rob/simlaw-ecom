@@ -51,6 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    # cloudinary
+    'cloudinary_storage',
+    'cloudinary',
 
     # 3rd party apps
     'crispy_forms',
@@ -165,3 +168,8 @@ django_heroku.settings(locals())
 
 options = DATABASES['default'].get('OPTIONS', {})
 options.pop('sslmode', None)
+
+CLOUDINARY_STORAGE = {
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
