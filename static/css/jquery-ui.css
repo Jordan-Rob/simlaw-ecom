@@ -1076,7 +1076,7 @@ a.ui-button:active,
 }
 .ui-state-active .ui-icon,
 .ui-button:active .ui-icon {
-/*	background-image: url("images/ui-icons_ffffff_256x240.png");*/
+
 }
 .ui-state-highlight .ui-icon,
 .ui-button .ui-state-highlight.ui-icon {
@@ -1087,7 +1087,6 @@ a.ui-button:active,
 	background-image: url("images/ui-icons_cc0000_256x240.html");
 }
 .ui-button .ui-icon {
-/*	background-image: url("images/ui-icons_777777_256x240.png");*/
 }
 
 /* positioning */
