@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Maize</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div style="display: grid; justify-content:center; margin-bottom:100px;">
+            <div >
+                <div class="product_detail_image">
+                    <img src="{% static 'images/shop/maize.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div style="display: grid !important; justify-content:center !important; margin-bottom:30px;">
+                <h2>HIGHLAND VARIETIES</h2>
+            </div>
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Optimal Production <br>Levels</th>
+                            <th>Yield </th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>H614</td>
+                            <td></td>
+                            <td>38</td>
+                            <td>-Tolerant to blight, leaf and ear diseases and weevil attack.</td>
+                         </tr>
+                         <tr>
+                            <td>H628</td>
+                            <td></td>
+                            <td>46</td>
+                            <td>
+                                <ul>
+                                    <li>- Producer of more than one cob.</li>
+                                    <li>- Tolerant to most leaf diseases, blight and rust.</li>
+                                    <li>-Tolerant to lodging.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>H6213</td>
+                            <td>Rainfall of between 800-1500mm</td>
+                            <td>52</td>
+                            <td>-Tolerant to lodging, ear rot, rust, grey leaf spot and leaf blight.</td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        <div class="row" style=" margin-top:80px;">    
+            <div style="display: grid !important; justify-content:center !important; margin-bottom:30px;">
+                <h2>MID ALTITUDE</h2>
+            </div>
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Optimal Production <br>Levels</th>
+                            <th>Yield </th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>H513</td>
+                            <td></td>
+                            <td>24</td>
+                            <td>-Partially tolerant to maize streak virus.</td>
+                         </tr>
+                         <tr>
+                            <td>H520</td>
+                            <td>Matures at 120-130 days</td>
+                            <td>32</td>
+                            <td>-Tolerant to leaf rust, grey leaf spot, lodging, has flint kernels and excellent husk cover.</td>
+                         </tr>
+                         <tr>
+                            <td>DH04</td>
+                            <td>Matures at 80-120 days</td>
+                            <td>24</td>
+                            <td>-Short drought tolerant, good husk cover and stand ability.</td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        <div class="row" style=" margin-top:80px;">    
+            <div style="display: grid !important; justify-content:center !important; margin-bottom:30px;">
+                <h2>TRANSITIONAL VARIETIES</h2>
+            </div>
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Optimal Production <br>Levels</th>
+                            <th>Yield </th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>H624</td>
+                            <td>
+                                <ul>
+                                    <li>Rainfall: 800-1500mm</li>
+                                    <li>Temperature: 12 degrees Celsius  30 degrees Celsius</li>
+                                </ul>
+                            </td>
+                            <td>32</td>
+                            <td>-Tolerant to grey leaf spot, leaf blight and rust, excellent husk cover with flint kneels.</td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        <div class="row" style=" margin-top:80px;">    
+            <div style="display: grid !important; justify-content:center !important; margin-bottom:30px;">
+                <h2>OPEN POLLINATED VARIETIES</h2>
+            </div>
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Optimal Production <br>Levels</th>
+                            <th>Yield </th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>Longe 5</td>
+                            <td>1000-1600 meters Above sea level</td>
+                            <td>4-6 tons per hectare</td>
+                            <td>
+                                <ul>
+                                    <li>-Resistant to MSV, GLS, susceptible to NLB, early maturity.</li>
+                                    <li>-Drought tolerant.</li>
+                                    <li>-High content of lysine and tryptophane.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+
+
+{% endblock content %}

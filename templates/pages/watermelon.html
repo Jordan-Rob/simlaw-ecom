@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Watermelons</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div style="display: grid; justify-content:center; margin-bottom:100px;">
+            <div >
+                <div class="product_detail_image">
+                    <img src="{% static  'images/shop/watermelons.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Fruit Weight</th>
+                            <th>Yield Potential</th>
+                            <th>Duration to Maturity</th>
+                            <th>Spacing</th>
+                            <th>Seed Rate</th>
+                            <th>Approximate Seed <br> Count (grams)</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>JULIE F1</td>
+                            <td>10-12kgs</td>
+                            <td>35-40 tons per acre</td>
+                            <td>85 days</td>
+                            <td></td>
+                            <td>500 grams per acre</td>
+                            <td>20 seeds</td>
+                            <td>
+                                <ul>
+                                    <li>-A very popular hybrid with oblong shaped fruit.</li>
+                                    <li>-Very sweet red flesh.</li>
+                                    <li>-Tolerant to fusasium wilt and anthracnose.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>SUGAR BELLE F1</td>
+                            <td>8-10kgs</td>
+                            <td>45-50 tons per acre</td>
+                            <td>100-120 days</td>
+                            <td>100x80cm</td>
+                            <td>250 grams per acre</td>
+                            <td>40 seeds</td>
+                            <td>
+                                <ul>
+                                    <li>-Dark green, round uniform fruit.</li>
+                                    <li>-Excellent transportability due to thick fruit.</li>
+                                    <li>-High tolerance to fusasium wilt.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>SUGAR BABY</td>
+                            <td>5-8kgs</td>
+                            <td>48-50 tons per acre</td>
+                            <td>80 days</td>
+                            <td>100x100cm</td>
+                            <td>500 grams per acre</td>
+                            <td>20 seeds</td>
+                            <td>
+                                <ul>
+                                    <li>-Dark green, round watermelon.</li>
+                                    <li>-Very uniform growth.</li>
+                                    <li>-Very adoptable and grows on wide range of soils.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+{% endblock content %}

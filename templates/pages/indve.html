@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Indigenous Vegetables</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div style="display: grid; justify-content:center; margin-bottom:100px;">
+            <div >
+                <div class="product_detail_image">
+                    <img src="{% static 'images/shop/spinach.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Variety</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>AMARANTHUS (Doodo)</td>
+                            <td>
+                                <ul>
+                                    <li>-Highly nutritious vegetable.</li>
+                                    <li>-Easy to grow.</li>
+                                    <li>-Fast maturing, has very vigorous growth.</li>
+                                    <li>-Transports well.</li>
+                                    <li>-Quick to cook.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>SPIDER PLANT (Jjobyo)</td>
+                            <td>
+                                <ul>
+                                    <li>-Prolific yielder and long harvesting local vegetable.</li>
+                                    <li>-Requires minimal management.</li>
+                                    <li>-Gown for its leaves.</li>
+                                    <li>-Highly nutritious vegetable.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>RED AMARANTHUS (Bugga)</td>
+                            <td>
+                                <ul>
+                                    <li>-Widely adaptable vegetable.</li>
+                                    <li>-Easy to grow with minimum requirement of chemicals.</li>
+                                    <li>-Matures in 30 days after planting.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>NAKATI</td>
+                            <td>
+                                <ul>
+                                    <li>-Bush spreading, local vegetable.</li>
+                                    <li>-Highly nutritive and very adaptable to a wide range of soils.</li>
+                                    <li>-Matures in 30 days after planting.</li>
+                                    <li>-Seed rate of 500 grams per acre.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>JUTE MALLOW (Mutere, Mrenda)</td>
+                            <td>
+                                <ul>
+                                    <li>-Soft easy to cook local vegetable.</li>
+                                    <li>-Grows well in warm areas.</li>
+                                    <li>-Has medicinal and nutritional quality.</li>
+                                    <li>-Requires minimal care.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+
+{% endblock content %}

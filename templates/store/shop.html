@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Products</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="index-2.html">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <div class="sidebar-wrapper style2">
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar wow fadeInUp animated" data-wow-delay="0.1s"
+                        data-wow-duration="1200ms">
+                        <div class="sidebar-search-box">
+                            <form class="search-form" action="#">
+                                <input placeholder="Search" type="text">
+                                <button type="submit"><i class="icon-magnifying-glass"
+                                        aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start sidebar categories Box-->
+                    <!--End sidebar categories Box-->
+                    <!--Start sidebar categories Box-->
+                    <div class="single-sidebar wow fadeInUp animated" data-wow-delay="0.3s"
+                        data-wow-duration="1200ms">
+                        <div class="categories-box">
+                            <div class="title">
+                                <h3>Categories</h3>
+                            </div>
+                            <ul class="categories clearfix">
+                                <li><a href="#">Vegetables</a></li>
+                                <li><a href="#">Fruit</a></li>
+                                <li><a href="#">Beans</a></li>
+                                <li><a href="#">Cereals</a></li>
+                                <li><a href="#">Pastures</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--End sidebar categories Box-->
+                    <!--Start single sidebar-->
+                    
+                    <!--End single sidebar-->
+
+                </div>
+            </div>
+            <!--End Sidebar Wrapper-->
+            <div class="col-xl-9 col-lg-9">
+                    <div class="all_products">
+                        <div class="row">
+                            {% for pdt in object_list %}
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="all_products_single text-center">
+                                    <div class="all_product_item_image">
+                                        <img src="{{ pdt.image_270x293.url }}" alt="">
+                                        <div class="all_product_hover">
+                                            <div class="all_product_icon">
+                                                <a href="{% url 'add-to-cart' pdt.id %}"><span class="icon-shopping-cart"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4><a href="{% url 'pdt_detail' pdt.id %}">{{ pdt.name }}</a></h4>
+                                    <p>UGX{{ pdt.price }}</p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

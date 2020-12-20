@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Checkout</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="index-2.html">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Payment</span></li>
+        </ul>
+    </div>
+</section>
+
+<section class="checkout">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-lg-6">
+                <h2>Your Billing Details</h2>
+                <div class="row">
+                    <div class="payments_part">
+                        <div class="direct">
+                            <div class="checkbox">
+                                <label>
+                                    <span>Contact</span>
+                                </label>
+                            </div>
+                            <div class="payments_part_text">
+                                <p><a href="#">{{ order.customer.email  }}</a></p>
+                            </div>
+                        </div>
+                        <div class="paypal_payment">
+                            <div class="checkbox">
+                                <label>
+                                    <span>Ship to</span>
+                                </label>
+                            </div>
+                            <div class="payments_part_text">
+                                {% if pickup %}
+                                    <p>{{ pickup.pickup_location }}</p>
+                                {% else %}
+                                    <p>{{ order.billing_details.building_apartment_name }}, {{ order.billing_details.address }}, {{ order.billing_details.location }}</p><a href="#"></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="billing_details">
+                    
+                        <form class="billing_details_form" method="POST">
+                            {% csrf_token %}
+                            <script src="https://checkout.flutterwave.com/v3.js"></script>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="billing_input_box">
+                                        <p>To pay with Mobile Money(MTN or Airtel) or Visa :</p>
+                                        <div class="place_order_btn">
+                                            <button type="button" class="thm-btn" onClick="makePayment()" >Pay Now</button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <div class="billing_input_box">
+                                        <p> To pay on delivery Select Yes below: </p>
+                                        {{ form|crispy }}
+                                    </div>
+                                </div>
+                                <div class="col-xl-12">
+                                    <p>Only complete Order after payment is made or pay on delivery is selected</p>
+                                    <div class="place_order_btn">
+                                        <button  class="thm-btn" type="submit" >Complete Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6">
+                <h2>Your Order</h2>
+                <div >
+                    <div class="order_table_box">
+                        <table class="order_table_detail">
+                            <thead class="order_table_head">
+                                <tr>
+                                    <th>Product</th>
+                                    <th class="text-right">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in order.orderitem_set.all %}
+                                <tr>
+                                    <td class="pro__title">{{  item.product.name  }} × {{ item.quantity }}</td>
+                                    <td class="pro__price">UGX {{ item.get_final_price }}</td>
+                                </tr>
+                                {% endfor %}
+                                <tr>
+                                    <td class="pro__title">Subtotal</td>
+                                    <td class="pro__price">UGX {{ order.total_price }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="pro__title">{{ text }}</td>
+                                    <td class="pro__price">UGX {{ amnt }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="pro__title">Total</td>
+                                    <td class="pro__price">UGX {{ total }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                </div>
+            </div>
+        </div>
+        <div class="your_order">
+        </div>
+    </div>
+</section>
+
+<script>
+    const amount = "{{ total }}";
+    const name = "{{ order.customer.username }}";
+    const email = "{{ order.customer.email }}";
+    const phone = "{{ order.customer.phone }}";
+    const url = "{% url 'payment' %}"
+  
+    function makePayment() {
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK-f3b689d1d82216aad74f397e150e7414-X",
+        tx_ref: "hooli-tx-1920bbtyt",
+        amount: amount,
+        currency: "UGX",
+        payment_options: "card, mobilemoneyuganda",
+        redirect_url: // specified redirect URL
+          url,
+        meta: {
+          consumer_id: 23,
+          consumer_mac: "92a3-912ba-1192a",
+        },
+        customer: {
+          email: email,
+          phone_number: phone,
+          name: name,
+        },
+        callback: function (data) {
+          console.log(data);
+        },
+        onclose: function() {
+          // close modal
+        },
+        customizations: {
+          title: "Simlaw Seeds",
+          description: "Payment for items in cart",
+          logo: "",
+        },
+      });
+    }
+  </script>
+
+{% endblock content %}

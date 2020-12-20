@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="page-header" style="background-image: url(/static/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Pasture Grass</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="#" class="shop_style">Shop</a></li>
+            <li><span>Products</span></li>
+        </ul>
+    </div>
+</section>
+<section class="product_detail">
+    <div class="container">
+        <div style="display: grid; justify-content:center; margin-bottom:100px;">
+            <div >
+                <div class="product_detail_image">
+                    <img src="{% static 'images/shop/grass.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">    
+            <div class="col-xl-12 col-lg-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                     <thead>
+                         <tr>
+                            <th>Pasture Types</th>
+                            <th>Optimal Production level</th>
+                            <th>Duration to Maturity</th>
+                            <th>Special Attributes</th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                            <td>Boma Rhodes</td>
+                            <td>1000-2500 meters above sea level</td>
+                            <td>90-105 days</td>
+                            <td>
+                                <ul>
+                                    <li>-Soft and excellent herbage slow growing and hence suited for lower stocking rates.</li>
+                                    <li>-Gives bottom tillers and forms a thick grass.</li>
+                                    <li>-It is very popular in all altitudes.</li>
+                                    <li>-It is drought tolerant.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>Elmba / Mbarara Rhodes</td>
+                            <td>110-130 meters above sea level</td>
+                            <td>15-20 days</td>
+                            <td>-Red mottled (Red with white specks)</td>
+                         </tr>
+                         <tr>
+                            <td>Sugar Graze</td>
+                            <td></td>
+                            <td>45-50 days</td>
+                            <td>
+                                <ul>
+                                    <li>-Very high dry matter production.</li>
+                                    <li>Very high sugar content.</li>
+                                    <li>-Improved feed quality and palatability with minimal feed wastage.</li>
+                                    <li>-It has a wide range of disease resistance.</li>
+                                    <li>-Wide sowing adaptability with 5kg per acre seed rate, with 3.5 multi-cuts for green-chop feeding starting at 45-50 days after planting and 4-6 weeks interval between cuts.</li>
+                                    <li>-Silage making target one cutting at 75-90 days after planting but re-grows if managed well.</li>
+                                    <li>-Can be used for green-chops.</li>
+                                    <li>-Harvest cutting should be at 6-8 inches from the ground.</li>
+                                    <li></li>
+                                </ul>
+                            </td>
+                         </tr>
+                         <tr>
+                            <td>Foorage Millet (Nutrifeed)</td>
+                            <td></td>
+                            <td>35-45 days</td>
+                            <td>
+                                <ul>
+                                    <li>-High protein content (16-20%)</li>
+                                    <li>-High metabolizable energy (10MJ/KG).</li>
+                                    <li>-Multi-cuts of 5-8 cuttings under good management and conditions (seed rate is 3kgs per acre, plant in rows of 1ft by 1ft and harvest cutting at 6-8 inches to boost re-growth.</li>
+                                    <li>-Highly recommended for early feeding and its suitable for green-chop feeding and round bale silage.</li>
+                                    <li>-Being a multi-cut option covers long part of feeding requirements.</li>
+                                </ul>
+                            </td>
+                         </tr>
+                     </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="all_products_two">
+    <div class="container">
+        
+        
+    </div>
+</section>
+
+{% endblock content %}

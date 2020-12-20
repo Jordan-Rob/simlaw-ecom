@@ -7,6 +7,16 @@ verify_ssl = true
 
 [packages]
 django = "*"
+pillow = "*"
+django-crispy-forms = "*"
+django-model-utils = "*"
+gunicorn = "*"
+whitenoise = "*"
+mysqlclient = "*"
+django-heroku = "*"
+python-dotenv = "*"
+dj3-cloudinary-storage = "*"
+cloudinary = "*"
 
 [requires]
 python_version = "3.8"
